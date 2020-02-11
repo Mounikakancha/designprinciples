@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int main(){
+	int i,j,a,b,sum1=0,sum2=0;
+	printf("enter a and b");
+	scanf("%d%d",&a,&b);
+	for(i=1;i<a;i++){
+		if(a%i==0){
+		sum1=sum1+i;
+		//printf("%d",i);
+		//printf("\n");
+		}
+	}
+	for(j=1;j<b;j++){
+		if(b%j==0){
+		sum2=sum2+j;
+		//printf("%d",j);
+		//printf("\n");
+		}
+	}
+	printf("sum1=%d sum2=%d",sum1,sum2);
+	if((sum1==b)&&(sum2==a))
+		printf("amicable");
+	else 
+		printf("not");
+	return 0;
+}
+	
+

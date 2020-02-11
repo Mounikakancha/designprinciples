@@ -1,0 +1,17 @@
+import aiml
+import os
+
+kernel = aiml.Kernel()
+message=input("Enter your message >> ")
+if os.path.isfile("bot_brain.brn"):
+    kernel.bootstrap(brainFile = "bot_brain.brn")
+elif (message == "quit"):
+    exit()
+else:
+    kernel.bootstrap(learnFiles = "botchat.xml", commands = "LOAD")
+    kernel.saveBrain("bot_brain.brn")
+
+# kernel now ready for use
+while True:
+    print("ROBOT>>>")
+    print(kernel.respond(message))
